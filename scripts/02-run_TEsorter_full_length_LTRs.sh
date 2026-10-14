@@ -39,4 +39,4 @@ apptainer exec -C --bind "$WORKDIR" --bind "$COURSEDIR" \
 #   "$COURSEDIR/containers/Annotation_analysis_R4.4.sif" \
 #   Rscript --vanilla "$COURSEDIR/scripts/03-full_length_LTRs_identity_copy.R"
 
-# You can also download the data and script and run it locally in RStudio. 
+# You can also download the data and script and run it locally in RStudio.  
