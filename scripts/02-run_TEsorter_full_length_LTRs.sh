@@ -22,7 +22,7 @@ shopt -s nullglob
 FASTA=("$RAW"/*.mod.EDTA.raw/*.mod.LTR.intact.raw.fa)
 GFF=("$RAW"/*.mod.EDTA.raw/*.mod.LTR.intact.raw.gff3)
 
-OUTDIR="$WORKDIR/output/LTR_full_length"
+OUTDIR="$WORKDIR/output/02-LTR_full_length"
 unset SINGULARITY_BIND APPTAINER_BIND SINGULARITY_TMPDIR
 mkdir -p "$OUTDIR/tmp"
 # Work with copies so ongoing EDTA files are not changed.

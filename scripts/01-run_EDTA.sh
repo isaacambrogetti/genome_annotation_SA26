@@ -2,22 +2,17 @@
 #SBATCH --job-name=EDTA_annotation
 #SBATCH --partition=pibu_el8
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=20
-#SBATCH --mem=96G
-#SBATCH --time=6-00:00:00
+#SBATCH --cpus-per-task=22
+#SBATCH --mem=128G
+#SBATCH --time=20:00:00
 #SBATCH --mail-user=isaac.ambrogetti@unifr.ch
 #SBATCH --mail-type=begin,end
-#SBATCH --account=class-sbl-30004-ws-2026
-#SBATCH --reservation=class-sbl-30004-2026-10-14
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
 # Stop on failed commands, unset variables, or failures within pipelines.
 set -euo pipefail
 
-# Copy this script to your project and submit from that directory:
-# mkdir -p logs
-# sbatch 01-run_EDTA.sh
 # Shared course software and references; results stay in your own project.
 COURSEDIR=/data/courses/genome_annotation_resources/2026
 WORKDIR=/data/users/iambrogetti/genome_annotation_SA26  # Directory in your /data/users/$USER/Folder.
@@ -27,7 +22,7 @@ GENOME="$(readlink -f "$GENOME")"  # Bind the real assembly when using a symlink
 # Arabidopsis coding sequences help remove gene-derived sequences from the TE library.
 CDS="$COURSEDIR/data/TAIR10_cds_20110103_representative_gene_model_updated"
 EDTA_SIF="$COURSEDIR/containers/EDTA_v2.3.0_TIRLearner4.sif"
-OUTDIR="$WORKDIR/output/EDTA"
+OUTDIR="$WORKDIR/output/01-EDTA"
 
 # Prevent inherited container settings from changing the course environment.
 unset SINGULARITY_BIND APPTAINER_BIND SINGULARITY_TMPDIR
