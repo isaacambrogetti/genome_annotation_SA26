@@ -17,14 +17,14 @@ MAKER_SIF="$COURSEDIR/containers/MAKER_3.01.03.sif"
 GENES="$FINALDIR/filtered.genes.renamed.gff3"
 
 apptainer exec --cleanenv --env TMPDIR=/tmp \
-    --bind /data --bind "$WORKDIR"
+    --bind /data --bind "$WORKDIR" \
     --bind "$OUTDIR/tmp":/tmp \
     --pwd "$OUTDIR" "$MAKER_SIF" \
     maker_functional_fasta "$UNIPROT" "$OUTDIR/blast_uniprot.besthits.tsv" "$PROTEINS" \
     > "$OUTDIR/maker_roteins.filtered.Uniprot.fasta"
 
 apptainer exec --cleanenv --env TMPDIR=/tmp \
-    --bind /data --bind "$WORKDIR"
+    --bind /data --bind "$WORKDIR" \
     --bind "$OUTDIR/tmp":/tmp \
     --pwd "$OUTDIR" "$MAKER_SIF" \
     maker_functional_ff "$UNIPROT" "$OUTDIR/blast_uniprot.besthits.tsv" "$GENES" \
