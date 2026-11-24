@@ -9,6 +9,8 @@
 #SBATCH --output=logs/07-3-%x_%j.out
 #SBATCH --error=logs/07-3-%x_%j.err
 
+### Week 3 step 6: Filtering and refining gene annotation ###
+
 COURSEDIR=/data/courses/genome_annotation_resources/2026
 MAKER_SIF="$COURSEDIR/containers/MAKER_3.01.03.sif"
 WORKDIR="/data/users/iambrogetti/genome_annotation_SA26"
