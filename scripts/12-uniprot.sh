@@ -27,5 +27,5 @@ apptainer exec --cleanenv --env TMPDIR=/tmp \
     --bind /data --bind "$WORKDIR" \
     --bind "$OUTDIR/tmp":/tmp \
     --pwd "$OUTDIR" "$MAKER_SIF" \
-    maker_functional_ff "$UNIPROT" "$OUTDIR/blast_uniprot.besthits.tsv" "$GENES" \
+    maker_functional_gff "$UNIPROT" "$OUTDIR/blast_uniprot.besthits.tsv" "$GENES" \
     > "$OUTDIR/filtered.genes.Uniprot.gff3"
